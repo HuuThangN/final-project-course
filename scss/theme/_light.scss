@@ -2,8 +2,8 @@
 
 html {
     --text-color: #1a162e;
-    --icon-color: brightness(0) saturate(100%) invert(6%) sepia(84%) saturate(925%) hue-rotate(222deg) brightness(96%)
-        contrast(94%);
+    --icon-color: brightness(0) saturate(100%) invert(6%) sepia(84%)
+        saturate(925%) hue-rotate(222deg) brightness(96%) contrast(94%);
 
     --body-bg: #f6f6f6;
     --header-bg-color: #eeeeee;
@@ -14,4 +14,8 @@ html {
     @include abstracts.breakpoint(lg) {
         --header-bg-color: #fff;
     }
+
+    // Dropdown
+    --dropdown-bg-color: #fff;
+    --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
 }

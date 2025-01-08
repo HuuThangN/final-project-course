@@ -33,6 +33,7 @@
 
 .top-menu {
     --main-column-width: 292px;
+    --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
 
     @include abstracts.breakpoint(xl) {
         --main-column-width: 230px;
@@ -42,7 +43,7 @@
 
     &__main {
         width: var(--main-column-width);
-        max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+        max-height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
     }
@@ -102,11 +103,12 @@
     }
 
     &__item {
-        &:hover .sub-menu {
+        &--active .sub-menu {
             display: grid;
         }
     }
 
+    &__item--active > &__link,
     &__item:hover > &__link {
         color: #0071dc;
         font-weight: 500;
@@ -131,4 +133,13 @@
     padding-left: var(--inner-padding);
 
     overflow-y: auto;
+
+    &--not-main {
+        position: initial;
+        inset: initial;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-height: var(--max-inner-height);
+        padding-left: 0;
+    }
 }

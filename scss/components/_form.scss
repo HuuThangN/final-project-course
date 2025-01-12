@@ -1,3 +1,5 @@
+@use '../abstracts';
+
 .form {
     &:has(:invalid) &__submit-btn {
         opacity: 0.5;
@@ -41,6 +43,10 @@
         &:focus-within {
             border-color: #77dae6;
         }
+
+        @include abstracts.screen(md) {
+            height: 48px;
+        }
     }
 
     &__input {
@@ -60,6 +66,10 @@
             margin-left: 12px;
             height: 100%;
             padding: 12px 0;
+        }
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
         }
     }
 
@@ -96,6 +106,10 @@
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 1.46;
+
+            @include abstracts.screen(md) {
+                font-size: 1.4rem;
+            }
         }
 
         &::before,
